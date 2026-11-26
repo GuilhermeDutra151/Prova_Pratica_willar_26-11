@@ -42,7 +42,7 @@ CREATE TABLE historico_partidas (
         REFERENCES partidas(id_partida)
 );
 
--- 2. INSERIR OS DADOS
+-- 2. INSERÇAO DE DADOS
 
 INSERT INTO jogadores (nickname, email, senha, status)
 VALUES
@@ -69,7 +69,7 @@ VALUES
 (2, 'Partida cadastrada no sistema'),
 (3, 'Partida cadastrada no sistema');
 
--- 3. FUNCAO DE BUSCA DE JOGADORES
+-- 3. FUNCAO BUSCA DE JOGADORES
 
 CREATE OR REPLACE FUNCTION fn_buscar_jogadores(
     termo TEXT
@@ -96,7 +96,7 @@ BEGIN
 END;
 $$;
 
--- 4. VIEW DO PAINEL PRINCIPAL
+-- 4. VIEW
 
 CREATE OR REPLACE VIEW vw_painel_principal AS
 SELECT
@@ -133,7 +133,7 @@ BEGIN
 END;
 $$;
 
--- 6. TRIGGER DE VALIDACAO
+-- 6. TRIGGER_VALIDACAO
 
 CREATE TRIGGER trg_validar_partida
 BEFORE INSERT ON partidas
@@ -162,7 +162,7 @@ BEGIN
 END;
 $$;
 
--- 8. TRIGGER DE HISTORICO
+-- 8. TRIGGER_HISTORICO
 
 CREATE TRIGGER trg_historico_partidas
 AFTER INSERT ON partidas
